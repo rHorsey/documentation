@@ -749,7 +749,7 @@ It has to be changed with:
 
 ### How to preview the table to see all available columns?
 
-All we have to do for this is change the whole the example query above with
+All we have to do for this is change the example query above with
 what follows:
 
 ```sql
@@ -759,28 +759,7 @@ what follows:
       "comstock_v1_metadata"
     WHERE
       "comstock_v1_state"."bldg_id" = "comstock_v1_metadata"."bldg_id"
-      AND "comstock_v1_state"."state" IN ('55')
-      AND "comstock_v1_state"."upgrade" = 0
-      AND "comstock_v1_metadata"."upgrade" = 0
-      AND "comstock_v1_metadata"."in.building_type" = 'MediumOffice'
     limit 10
 ```
 
-# From here on follow the example above:
-
-In each case say which block of code we're doing the update in - i.e. the
-group / order by clause or the where clause
-
-things to include:
-
-- How to filter by another variable - i.e. sqft or hvac system type
-- How to get all the allowable values for a metadata filter (using select
-  unique(col) from comstock_metadata_v0)
-
-DONE
-- How to query multiple states / building types
-- How to query an upgrade
-- How to change resolution - give changes for 15 min, daily, and monthly
-- How to get average instead of sum by altering the select clauses
-- How to preview the table to see what columns are available using select *
-  from blah limit 10
+This will show ten rows of data from all columns in the joined datasets.
